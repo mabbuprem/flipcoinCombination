@@ -13,21 +13,39 @@ namespace Flipcoin
             Console.WriteLine("Welcome to the flipcoin combination");
             //CONSTANTS
             const int Head = 1;
+            const int FLIPCOINTIMES 20;
 
-            Random rand = new Random();
-            int flipcoin = random.Next(0, 2);
-            if (flipcoin == Head)
+            //VARIABLES
+            int i1 = 1;
+            int headcounter = 0;
+            int tailcounter = 0;
+            IDictionary<int, string> tripleCombination = new Dictionary<int, string>();
+
+            while (i1 <= FLIPCOINTIMES)
             {
-                Console.WriteLine("HEAD");
+
+                Random rand = new Random();
+                int flipcoin = random.Next(0, 2);
+                if (flipcoin == Head)
+                {
+                    //Console.WriteLine("HEAD")
+                    SingleCombination[i1] = "H";
+                    tailcounter++;
+                }
+                i1++;
             }
-            else
+            for (int i2 = 1; i2 <= singleCombination.count; i2++)
             {
-                Console.WriteLine("TAIL");
+                Console.WriteLine(singleCombination[i2]);
             }
+            Console.WriteLine();
+            Console.WriteLine($"Persentage of HHH Single is {(hhh_counter * 100) / FLIPCOINTIMES}");
+            Console.WriteLine($"Persentage of HHT Single is {(hhh_counter * 100) / FLIPCOINTIMES}");
+
 
             Console.ReadLine();
         }
-
     }
 }
+            
 
